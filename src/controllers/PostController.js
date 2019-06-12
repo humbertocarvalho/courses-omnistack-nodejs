@@ -5,5 +5,7 @@ module.exports = {
     return await Post.find();
   },
 
-  async store(req, res) {}
+  async store(req, res) {
+    return res.json({ ok: true });
+  }
 };
