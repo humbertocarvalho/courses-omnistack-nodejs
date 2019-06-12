@@ -6,6 +6,18 @@ module.exports = {
   },
 
   async store(req, res) {
-    return res.json({ ok: true });
+    const { author, place, description, hashtags } = req.body;
+    const { filename: image } = req.file;
+
+    const post = await Post.create({
+      author,
+      place,
+      description,
+      hashtags,
+      image
+    });
+
+    console.log(post);
+    return res.json(post);
   }
 };
