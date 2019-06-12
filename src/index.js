@@ -1,9 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
-
+const dotenv = require('dotenv');
 const app = express();
 
-mongoose.connect('URLHERE', { useNewUrlParser: true });
+dotenv.config();
+
+mongoose.connect(process.env.URI_DB, { useNewUrlParser: true });
 
 app.use(require('./routes'));
 
