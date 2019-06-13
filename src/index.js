@@ -13,6 +13,10 @@ dotenv.config();
 
 mongoose.connect(process.env.URI_DB, { useNewUrlParser: true });
 
+app.user((req, res) => {
+  req.io = io;
+});
+
 app.use(cors());
 app.use(
   '/files',
