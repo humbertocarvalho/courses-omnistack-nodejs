@@ -6,6 +6,9 @@ const cors = require('cors');
 
 const app = express();
 
+const server = require('http').Server(app);
+const io = require('socket.io')(server);
+
 dotenv.config();
 
 mongoose.connect(process.env.URI_DB, { useNewUrlParser: true });
@@ -17,4 +20,4 @@ app.use(
 );
 app.use(require('./routes'));
 
-app.listen(3333);
+server.listen(3333);
