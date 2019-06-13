@@ -13,8 +13,9 @@ dotenv.config();
 
 mongoose.connect(process.env.URI_DB, { useNewUrlParser: true });
 
-app.user((req, res) => {
+app.user((req, res, next) => {
   req.io = io;
+  next();
 });
 
 app.use(cors());
