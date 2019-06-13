@@ -13,7 +13,7 @@ dotenv.config();
 
 mongoose.connect(process.env.URI_DB, { useNewUrlParser: true });
 
-app.user((req, res, next) => {
+app.use((req, res, next) => {
   req.io = io;
   next();
 });

@@ -14,7 +14,7 @@ module.exports = {
     const { filename: image } = req.file;
 
     const [name] = image.split('.');
-    const fileName = `${name}.jpg`;
+    const fileNaodejsme = `${name}.jpg`;
 
     await sharp(req.file.path)
       .resize(500)
